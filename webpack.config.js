@@ -30,6 +30,8 @@ var config = {
 
             { test: /\.css$/, loader: 'style!css' },
 
+						{ test: /\.less$/, loader: 'style!css!less' },
+
             {
                 // ASSET LOADER
                 // Reference: https://github.com/webpack/file-loader
