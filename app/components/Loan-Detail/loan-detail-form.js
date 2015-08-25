@@ -51,8 +51,8 @@ let LoanDetailForm = React.createClass({
 			<Principal name="principal" onChange={this.fieldChanged} value={details.principal} />
 			<InterestRate name="interestRate" onChange={this.fieldChanged} value={details.interestRate}/>
 			<Years name="years" onChange={this.fieldChanged} value={details.years} />
-
-			<h2>{value}</h2>
+			<h3>Monthly Payment</h3>
+			<h2>${value}</h2>
 			</Well>
 	}
 });

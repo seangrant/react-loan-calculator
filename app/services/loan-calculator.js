@@ -35,6 +35,7 @@
                 principal: Math.round(row.principal / 100),
                 interest: Math.round(row.interest / 100),
                 payment: Math.round(monthly.payment / 100),
+							  balance: Math.round(row.balance / 100),
             }
         });
     };
@@ -45,11 +46,12 @@
         if(month <= totalMonths){
 
             var breakdown = monthlyBreakdown(interestRate, years, principal, payment);
-            var record = {month: month, principal: principal, interest: breakdown.interest};
+            var balance = principal - breakdown.payment;
+					  var record = {month: month, principal: principal, interest: breakdown.interest, balance: balance};
             mortgageTable.push(record);
             month += 1;
 
-            var balance = principal - breakdown.payment;
+
             monthlyTable(interestRate, years, balance , month, mortgageTable, payment);
         }
 
