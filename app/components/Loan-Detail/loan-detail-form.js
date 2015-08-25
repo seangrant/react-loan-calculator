@@ -2,8 +2,11 @@
 
 let React = require('react');
 
-let {Input, Button, ButtonGroup} = require('react-bootstrap');
-let UpDown = require('./../Up-Down-Numeric/up-down-numeric');
+let {Label} = require('react-bootstrap');
+let InterestRate = require('./interest-rate');
+
+let UpDown = require('./../Up-Down-Numeric/group-numeric-up-down');
+
 let LoanDetailForm = React.createClass({
 
 	getInitialState: function(){
@@ -11,15 +14,14 @@ let LoanDetailForm = React.createClass({
 			interestRate : 6.00
 		}
 	},
- 	interestRateChanged: function(value){
-		console.log(value);
+	rateChanged: function(value){
 		this.setState({interestRate: value});
 	},
-
 	render: function(){
 
 		return <form>
-			<UpDown onChange={this.interestRateChanged} max={99} min={0} value={this.state.interestRate}/>
+			<InterestRate value={this.state.interestRate}/>
+			<h3>Years</h3>
 			</form>
 	}
 });
