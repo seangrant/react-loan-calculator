@@ -10,7 +10,7 @@ let integerLength = function(value){
 }
 
 let pad = function(num, integer, decimal) {
-	  let size = decimal + integer + 1;
+	  let size = decimal + integer + (decimal ? 1 : 0);
     var s = fixedNumericString(num, decimal)+"";
     while (s.length < size) s = "0" + s;
     return s;

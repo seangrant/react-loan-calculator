@@ -1,13 +1,13 @@
 'use strict';
 
 let React = require('react');
+
 let UpDown = require('./../Up-Down-Numeric/group-numeric-up-down');
 
-let InterestRate = React.createClass({
+let Years = React.createClass({
 	propTypes: {
     onChange: React.PropTypes.func,
-		value: React.PropTypes.number,
-		name: React.PropTypes.string
+		value: React.PropTypes.number
   },
 	getInitialState: function(){
 		return {
@@ -26,12 +26,10 @@ let InterestRate = React.createClass({
 	},
 	render: function(){
 		return <div>
-			<h3>Interest Rate ({this.props.value}%)</h3>
-			<UpDown value={this.props.value} onChange={this.rateChanged} decimal={2} integer={2} />
-
+			<h3>Years ({this.props.value})</h3>
+			<UpDown value={this.props.value} onChange={this.rateChanged} decimal={0} integer={2} />
 			</div>
 	}
-
 });
 
-module.exports = InterestRate;
+module.exports = Years;

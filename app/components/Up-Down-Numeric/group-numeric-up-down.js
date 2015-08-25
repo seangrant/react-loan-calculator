@@ -4,6 +4,7 @@ let React = require('react');
 let UpDown = require('./up-down-numeric');
 let {Label} = require('react-bootstrap');
 let Numeric = require('./../../services/numeric');
+let Accounting = require('./../../services/accounting');
 
 let GroupNumeric = React.createClass({
 	propTypes: {
@@ -15,7 +16,7 @@ let GroupNumeric = React.createClass({
 		return {
 			rate: 36.00,
 			integer: this.props.integer || 3,
-			decimal: this.props.decimal || 2
+			decimal: this.props.decimal || 0
 		}
 	},
 	change: function(rate){
@@ -41,7 +42,7 @@ let GroupNumeric = React.createClass({
 	},
 
 	render: function(){
-
+    Accounting.formatMoney(12345678);
 		let count = Numeric.pad(this.props.value, this.state.integer, this.state.decimal);
 		let func = function(value){
 			return this.renderUpDown()
